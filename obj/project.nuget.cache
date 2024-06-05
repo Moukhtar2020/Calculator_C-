@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "eoO5E6U8sXQ2ZLvy8j2bPRkLnV4Y/InN4uXMIGBeihc0dqdAhKPS3IiUis5Q24btnCrMc0+zdDpU2D9YG0I+8w==",
+  "success": true,
+  "projectFilePath": "/Users/moukhtarhachim/Documents/C_Projects/Calculator/Calculator.csproj",
+  "expectedPackageFiles": [
+    "/Users/moukhtarhachim/.nuget/packages/microsoft.netcore.app.ref/6.0.26/microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
+    "/Users/moukhtarhachim/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.26/microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
+    "/Users/moukhtarhachim/.nuget/packages/microsoft.netcore.app.host.osx-arm64/6.0.26/microsoft.netcore.app.host.osx-arm64.6.0.26.nupkg.sha512"
+  ],
+  "logs": []
+}

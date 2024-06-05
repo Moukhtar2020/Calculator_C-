@@ -1,0 +1,14 @@
+/Users/moukhtarhachim/Documents/C_Projects/Calculator/bin/Debug/net6.0/Calculator
+/Users/moukhtarhachim/Documents/C_Projects/Calculator/bin/Debug/net6.0/Calculator.deps.json
+/Users/moukhtarhachim/Documents/C_Projects/Calculator/bin/Debug/net6.0/Calculator.runtimeconfig.json
+/Users/moukhtarhachim/Documents/C_Projects/Calculator/bin/Debug/net6.0/Calculator.dll
+/Users/moukhtarhachim/Documents/C_Projects/Calculator/bin/Debug/net6.0/Calculator.pdb
+/Users/moukhtarhachim/Documents/C_Projects/Calculator/obj/Debug/net6.0/Calculator.GeneratedMSBuildEditorConfig.editorconfig
+/Users/moukhtarhachim/Documents/C_Projects/Calculator/obj/Debug/net6.0/Calculator.AssemblyInfoInputs.cache
+/Users/moukhtarhachim/Documents/C_Projects/Calculator/obj/Debug/net6.0/Calculator.AssemblyInfo.cs
+/Users/moukhtarhachim/Documents/C_Projects/Calculator/obj/Debug/net6.0/Calculator.csproj.CoreCompileInputs.cache
+/Users/moukhtarhachim/Documents/C_Projects/Calculator/obj/Debug/net6.0/Calculator.dll
+/Users/moukhtarhachim/Documents/C_Projects/Calculator/obj/Debug/net6.0/refint/Calculator.dll
+/Users/moukhtarhachim/Documents/C_Projects/Calculator/obj/Debug/net6.0/Calculator.pdb
+/Users/moukhtarhachim/Documents/C_Projects/Calculator/obj/Debug/net6.0/Calculator.genruntimeconfig.cache
+/Users/moukhtarhachim/Documents/C_Projects/Calculator/obj/Debug/net6.0/ref/Calculator.dll

@@ -2,8 +2,11 @@
 using System.Collections.Concurrent;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
+using CalculatorLibrary;
 
-namespace Calculator;
+
+namespace CalculatorProgram
+{
 class Program
 {
     static void Main(string[] args)
@@ -13,6 +16,8 @@ class Program
         //Title
         System.Console.WriteLine("Console calculator in c# \r");
         System.Console.WriteLine("--------------------------\n");
+
+        Calculator calculator = new Calculator();     
     while(!endApp)
     {
         //Declare variables and set to empty. 
@@ -59,7 +64,7 @@ class Program
         {
             try
             {
-                result = Calculator.DoOperation(cleanNum1, cleanNum2, op);
+                result = calculator.DoOperation(cleanNum1, cleanNum2, op);
                 if(double.IsNaN(result))
                 {
                     System.Console.WriteLine("This operation will result in a mathematical ERROR!");
@@ -79,6 +84,8 @@ class Program
 
             System.Console.WriteLine("\n");
         }
+        calculator.Finish();
         return;
     }
+}
 }

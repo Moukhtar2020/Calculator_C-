@@ -12,3 +12,7 @@
 /Users/moukhtarhachim/Documents/C_Projects/Calculator/obj/Debug/net6.0/Calculator.pdb
 /Users/moukhtarhachim/Documents/C_Projects/Calculator/obj/Debug/net6.0/Calculator.genruntimeconfig.cache
 /Users/moukhtarhachim/Documents/C_Projects/Calculator/obj/Debug/net6.0/ref/Calculator.dll
+/Users/moukhtarhachim/Documents/C_Projects/Calculator/obj/Debug/net6.0/Calculator.sourcelink.json
+/Users/moukhtarhachim/Documents/C_Projects/Calculator/bin/Debug/net6.0/Newtonsoft.Json.dll
+/Users/moukhtarhachim/Documents/C_Projects/Calculator/obj/Debug/net6.0/Calculator.csproj.AssemblyReference.cache
+/Users/moukhtarhachim/Documents/C_Projects/Calculator/obj/Debug/net6.0/Calculator.csproj.CopyComplete

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "qqbpAj9hiMY5AGkzRnkcAXQeKYhFpveJYTPVHNP3Zrb5u5IFP8AwuBnMAjzH1/W2oDUyG0q0WWt4wK4cc5FdmQ==",
+  "dgSpecHash": "V0TCKvZa3q+/m/s20u37203boYO14J9fbq9G0OP0HiLmfAqEAdy01MqI3r7JWxllpPoS7PD/Zl/fBA0O8+slCw==",
   "success": true,
   "projectFilePath": "/Users/moukhtarhachim/Documents/C_Projects/Calculator/CalculatorLibrary/CalculatorLibrary.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/moukhtarhachim/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Concurrent;
+using System.Diagnostics.Metrics;
+using System.Formats.Asn1;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 using CalculatorLibrary;
@@ -13,17 +16,22 @@ class Program
     {
         bool endApp = false;
 
+        Calculator calculator = new Calculator();
+        ArrayList information = new ArrayList();
+
+        int counter = 0;  
         //Title
         System.Console.WriteLine("Console calculator in c# \r");
         System.Console.WriteLine("--------------------------\n");
 
-        Calculator calculator = new Calculator();     
     while(!endApp)
     {
+        counter++;
         //Declare variables and set to empty. 
         string? numInput1 = "";
         string? numInput2 = "";
         double result = 0;
+
 
         System.Console.WriteLine("Type in a number then press ENTER: ");
         numInput1 = Console.ReadLine();
@@ -51,7 +59,7 @@ class Program
         System.Console.WriteLine("\ts - Subtract");
         System.Console.WriteLine("\tm - Multiply");
         System.Console.WriteLine("\td - Divide");
-        Console.Write("Your option please? : ");
+        Console.WriteLine("Your option please? : ");
 
         string? op = Console.ReadLine();
 
@@ -65,11 +73,16 @@ class Program
             try
             {
                 result = calculator.DoOperation(cleanNum1, cleanNum2, op);
+                information.Add(result);
+
                 if(double.IsNaN(result))
                 {
                     System.Console.WriteLine("This operation will result in a mathematical ERROR!");
                 }
-                else System.Console.WriteLine("Your result: {0:0.##}\n", result);
+                else
+                {
+                    System.Console.WriteLine("Your result: {0:0.##}\n", result);
+                }
             }
                 catch (Exception e)
                 {
@@ -78,14 +91,38 @@ class Program
             }
             System.Console.WriteLine("--------------------------------\n");
 
-            //Wait for the user respond before closing 
-            System.Console.WriteLine("Press 'n' and enter to close te app or press any other key and enter to continue");
-            if(Console.ReadLine() == "n") endApp = true;
+            //Ask user if they would like to view or remove results from the arraylist or exit the application
+            System.Console.WriteLine("Would you like to preview and delete the results stored in the databse?");
+            System.Console.WriteLine("Type: Y - yes || N - no");
 
+            string answer = Console.ReadLine().ToUpper();
+            try{ 
+            if(answer == "Y")
+            {
+                calculator.printResults();
+                System.Console.WriteLine("Now deleting results....");
+                calculator.deleteResults();
+                System.Console.WriteLine("Deletion Successful!");
+            }
+            }
+            catch (InvalidOperationException e)
+            {
+                System.Console.WriteLine("" + e);
+            }
+
+            System.Console.WriteLine("Press 'n' and enter to close to app or press any other key and enter to continue");
+
+            if(Console.ReadLine() == "n")
+            {
+                endApp = true;
+                System.Console.WriteLine($"The amount of times the calculator was used was {counter}");
+            }
             System.Console.WriteLine("\n");
-        }
+    }
         calculator.Finish();
         return;
     }
-} 
+    }
 }
+
+

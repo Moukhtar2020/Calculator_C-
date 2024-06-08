@@ -92,7 +92,7 @@ class Program
             System.Console.WriteLine("--------------------------------\n");
 
             //Ask user if they would like to view or remove results from the arraylist or exit the application
-            System.Console.WriteLine("Would you like to preview and delete the results stored in the databse?");
+            System.Console.WriteLine("Would you like to delete the results stored in the databse?");
             System.Console.WriteLine("Type: Y - yes || N - no");
 
             string answer = Console.ReadLine().ToUpper();
@@ -106,11 +106,47 @@ class Program
             }
             else if(answer == "N")
             {
-                System.Console.WriteLine("Would you like to preview the results before moving on?");
+                System.Console.WriteLine("Would you like to preview the results in the database and perform new calculations?");
                 System.Console.WriteLine("Type: Y - yes || N - no");
                 if(Console.ReadLine().ToUpper() == "Y")
                 {
                     calculator.printResults();
+                    System.Console.WriteLine("Choose an operator from the following list to perform: ");
+                    System.Console.WriteLine("\tm - Power^10");
+                    System.Console.WriteLine("\tq - SquareRoot");
+                    if (Console.ReadLine().ToUpper() == "m")
+                    {
+                        System.Console.WriteLine("Now choose which previous result you would like to perform these calculations on? ");
+                        calculator.printResults();
+
+                        string userInputOne = Console.ReadLine();
+                        int userInputTwo;
+
+                        while (!int.TryParse(userInputOne, out userInputTwo))
+                        {
+                            System.Console.WriteLine("Please enter a number!");
+                            userInputOne = Console.ReadLine();  
+                        }    
+                        int powerValue = Convert.ToInt32(information[userInputTwo]);               
+                        calculator.powerOperation(powerValue);
+                    }
+                    else if(Console.ReadLine().ToUpper() == "q")
+                    {
+                        System.Console.WriteLine("Now choose which previous result you would like to perform these calculations on? ");
+                        calculator.printResults();
+
+                        string userInputThree = Console.ReadLine();
+                        int userInputFour;
+
+                        while (!int.TryParse(userInputThree, out userInputFour))
+                        {
+                            System.Console.WriteLine("Please enter a number!");
+                            userInputThree = Console.ReadLine();  
+                        }  
+                        int sqrValue = Convert.ToInt32(information[userInputFour]);     
+                        calculator.squareOperation(sqrValue);
+                    }
+                    
                 }
             }
             }
@@ -134,5 +170,6 @@ class Program
     }
     }
 }
+
 
 

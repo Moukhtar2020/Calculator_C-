@@ -5,6 +5,12 @@
       "Operand2": 5.0,
       "Operation": "Add",
       "Result": 10.0
+    },
+    {
+      "Operand1": 5.0,
+      "Operand2": 5.0,
+      "Operation": "Add",
+      "Result": 10.0
     }
   ]
 }

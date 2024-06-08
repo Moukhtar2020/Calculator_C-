@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Diagnostics;
 using System.Reflection.Metadata;
+using System.Xml.XPath;
+using Microsoft.VisualBasic;
 using Newtonsoft.Json; 
 
 namespace CalculatorLibrary
@@ -52,6 +54,9 @@ public class Calculator
                 }
                 writer.WriteValue("Divide");
                 break;
+                case "sq":
+                //
+                break;
                 //return text for in incorrect option entry
                 default:
                 break;
@@ -62,6 +67,24 @@ public class Calculator
         information.Add(result);
         return result;
     }
+
+    public void powerOperation(int input)
+    {
+        if(input >= 0 && input < information.Count)
+        {
+            double baseValue = input; 
+            double result = Math.Pow(baseValue-1, 100);
+            Console.WriteLine($"Result of {input} raised to the power of 10 is {result}");
+            information.Add(result);
+        }
+    }
+    public void squareOperation(int inputTwo)
+    {
+        double squareAnswer = Math.Sqrt(inputTwo-1);
+        Console.WriteLine($"Result of {inputTwo} square root is {squareAnswer}");
+        information.Add(squareAnswer);
+    }
+
     public void printResults()
     {
     
@@ -93,9 +116,6 @@ public class Calculator
             }
         }
     }
-
- 
-
     public void Finish()
     {
         writer.WriteEndArray();

@@ -104,11 +104,21 @@ class Program
                 calculator.deleteResults();
                 System.Console.WriteLine("Deletion Successful!");
             }
+            else if(answer == "N")
+            {
+                System.Console.WriteLine("Would you like to preview the results before moving on?");
+                System.Console.WriteLine("Type: Y - yes || N - no");
+                if(Console.ReadLine().ToUpper() == "Y")
+                {
+                    calculator.printResults();
+                }
+            }
             }
             catch (InvalidOperationException e)
             {
                 System.Console.WriteLine("" + e);
             }
+          
 
             System.Console.WriteLine("Press 'n' and enter to close to app or press any other key and enter to continue");
 

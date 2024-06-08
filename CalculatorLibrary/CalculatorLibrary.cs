@@ -68,24 +68,29 @@ public class Calculator
         return result;
     }
 
-    public void powerOperation(int input)
+    public void PowerOperation(int input)
     {
-        if(input >= 0 && input < information.Count)
+        if(input >= 0) 
         {
             double baseValue = input; 
-            double result = Math.Pow(baseValue-1, 100);
-            Console.WriteLine($"Result of {input} raised to the power of 10 is {result}");
+            double result = Math.Pow(baseValue, 10);
             information.Add(result);
+            Console.WriteLine($"Result of {input} raised to the power of 10 is {result}");
+        }
+        else
+        {
+            System.Console.WriteLine("Number less than 0");
         }
     }
-    public void squareOperation(int inputTwo)
+    public void SquareOperation(int inputTwo)
     {
-        double squareAnswer = Math.Sqrt(inputTwo-1);
-        Console.WriteLine($"Result of {inputTwo} square root is {squareAnswer}");
+        double value = inputTwo;
+        double squareAnswer = Math.Sqrt(value);
         information.Add(squareAnswer);
+        Console.WriteLine($"Result of {inputTwo} square root is {squareAnswer}");
     }
 
-    public void printResults()
+    public void PrintResults()
     {
     
         foreach(var view in information)
@@ -101,7 +106,7 @@ public class Calculator
         }
     }
 
-    public void deleteResults()
+    public void DeleteResults()
     {
         foreach(var view in information)
         {

@@ -99,9 +99,9 @@ class Program
             try{ 
             if(answer == "Y")
             {
-                calculator.printResults();
+                calculator.PrintResults();
                 System.Console.WriteLine("Now deleting results....");
-                calculator.deleteResults();
+                calculator.DeleteResults();
                 System.Console.WriteLine("Deletion Successful!");
             }
             else if(answer == "N")
@@ -109,46 +109,11 @@ class Program
                 System.Console.WriteLine("Would you like to preview the results in the database and perform new calculations?");
                 System.Console.WriteLine("Type: Y - yes || N - no");
                 if(Console.ReadLine().ToUpper() == "Y")
-                {
-                    calculator.printResults();
-                    System.Console.WriteLine("Choose an operator from the following list to perform: ");
-                    System.Console.WriteLine("\tm - Power^10");
-                    System.Console.WriteLine("\tq - SquareRoot");
-                    if (Console.ReadLine().ToUpper() == "m")
-                    {
-                        System.Console.WriteLine("Now choose which previous result you would like to perform these calculations on? ");
-                        calculator.printResults();
-
-                        string userInputOne = Console.ReadLine();
-                        int userInputTwo;
-
-                        while (!int.TryParse(userInputOne, out userInputTwo))
                         {
-                            System.Console.WriteLine("Please enter a number!");
-                            userInputOne = Console.ReadLine();  
-                        }    
-                        int powerValue = Convert.ToInt32(information[userInputTwo]);               
-                        calculator.powerOperation(powerValue);
+                            calculator.PrintResults();
+                            extraFeatures(calculator, information);
+                        }
                     }
-                    else if(Console.ReadLine().ToUpper() == "q")
-                    {
-                        System.Console.WriteLine("Now choose which previous result you would like to perform these calculations on? ");
-                        calculator.printResults();
-
-                        string userInputThree = Console.ReadLine();
-                        int userInputFour;
-
-                        while (!int.TryParse(userInputThree, out userInputFour))
-                        {
-                            System.Console.WriteLine("Please enter a number!");
-                            userInputThree = Console.ReadLine();  
-                        }  
-                        int sqrValue = Convert.ToInt32(information[userInputFour]);     
-                        calculator.squareOperation(sqrValue);
-                    }
-                    
-                }
-            }
             }
             catch (InvalidOperationException e)
             {
@@ -167,7 +132,51 @@ class Program
     }
         calculator.Finish();
         return;
-    }
+
+            static void extraFeatures(Calculator calculator, ArrayList information)
+            {
+                System.Console.WriteLine("Choose an operator from the following list to perform: ");
+                System.Console.WriteLine("\tm - Power^10");
+                System.Console.WriteLine("\tq - SquareRoot");
+
+                string? opTwo = Console.ReadLine();
+                
+                if (opTwo.ToLower() == "m")
+                {
+                    System.Console.WriteLine("Now choose which previous result you would like to perform these calculations on? ");
+                    calculator.PrintResults();
+
+                    string userInputOne = Console.ReadLine();
+                    int userInputTwo;
+
+                    while (!int.TryParse(userInputOne, out userInputTwo))
+                    {
+                        System.Console.WriteLine("Please enter a number!");
+                        userInputOne = Console.ReadLine();
+                    }
+                    userInputTwo = userInputTwo - 1;
+                    int powerValue = Convert.ToInt32(information[userInputTwo]);
+                    calculator.PowerOperation(powerValue);
+                }
+                else if (opTwo.ToLower() == "q")
+                {
+                    System.Console.WriteLine("Now choose which previous result you would like to perform these calculations on? ");
+                    calculator.PrintResults();
+
+                    string userInputThree = Console.ReadLine();
+                    int userInputFour;
+
+                    while (!int.TryParse(userInputThree, out userInputFour))
+                    {
+                        System.Console.WriteLine("Please enter a number!");
+                        userInputThree = Console.ReadLine();
+                    }
+                    userInputFour = userInputFour - 1;
+                    int sqrValue = Convert.ToInt32(information[userInputFour]);
+                    calculator.SquareOperation(sqrValue);
+                }
+            }
+        }
     }
 }
 
